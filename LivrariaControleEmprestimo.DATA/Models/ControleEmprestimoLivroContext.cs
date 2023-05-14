@@ -8,21 +8,21 @@ using Microsoft.Extensions.Configuration;
 
 namespace LivrariaControleEmprestimo.DATA.Models
 {
-    public partial class ControleEmprestimoLivroContext : DbContext
+    public partial class LivroClienteEmprestimo : DbContext
     {
 
         private readonly IConfiguration _configuration;
 
-        public ControleEmprestimoLivroContext(IConfiguration configuration)
+        public LivroClienteEmprestimo(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
-        public ControleEmprestimoLivroContext()
+        public LivroClienteEmprestimo()
         {
         }
 
-        public ControleEmprestimoLivroContext(DbContextOptions<ControleEmprestimoLivroContext> options)
+        public LivroClienteEmprestimo(DbContextOptions<LivroClienteEmprestimo> options)
             : base(options)
         {
         }
