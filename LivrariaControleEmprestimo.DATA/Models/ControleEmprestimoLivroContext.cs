@@ -8,21 +8,21 @@ using Microsoft.Extensions.Configuration;
 
 namespace LivrariaControleEmprestimo.DATA.Models
 {
-    public partial class LivroClienteEmprestimo : DbContext
+    public partial class ControleEmprestimoLivroContext : DbContext
     {
 
         private readonly IConfiguration _configuration;
 
-        public LivroClienteEmprestimo(IConfiguration configuration)
+        public ControleEmprestimoLivroContext(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
-        public LivroClienteEmprestimo()
+        public ControleEmprestimoLivroContext()
         {
         }
 
-        public LivroClienteEmprestimo(DbContextOptions<LivroClienteEmprestimo> options)
+        public ControleEmprestimoLivroContext(DbContextOptions<ControleEmprestimoLivroContext> options)
             : base(options)
         {
         }
@@ -56,15 +56,15 @@ namespace LivrariaControleEmprestimo.DATA.Models
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
-                entity.HasOne(d => d.IdClienteNavigation)
+                entity.HasOne(d => d.LceIdClienteNavigation)
                     .WithMany(p => p.LivroClienteEmprestimo)
-                    .HasForeignKey(d => d.IdCliente)
+                    .HasForeignKey(d => d.LceIdCliente)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Livro_Cliente_Emprestimo_Cliente");
 
-                entity.HasOne(d => d.IdLivroNavigation)
+                entity.HasOne(d => d.LceIdLivroNavigation)
                     .WithMany(p => p.LivroClienteEmprestimo)
-                    .HasForeignKey(d => d.IdLivro)
+                    .HasForeignKey(d => d.LceIdLivro)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Livro_Cliente_Emprestimo_Livro");
             });

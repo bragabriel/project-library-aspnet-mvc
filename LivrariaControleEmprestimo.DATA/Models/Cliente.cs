@@ -19,32 +19,45 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [Column("id")]
         public int Id { get; set; }
         [Required]
-        [Column("CPF")]
+        [Column("cliCPF")]
         [StringLength(14)]
         [Unicode(false)]
-        public string Cpf { get; set; }
+        public string CliCpf { get; set; }
         [Required]
-        [Column("nome")]
+        [Column("cliNome")]
         [StringLength(100)]
         [Unicode(false)]
-        public string Nome { get; set; }
+        public string CliNome { get; set; }
         [Required]
-        [Column("endereco")]
+        [Column("cliEndereco")]
+        [StringLength(200)]
+        [Unicode(false)]
+        public string CliEndereco { get; set; }
+        [Required]
+        [Column("cliCidade")]
+        [StringLength(100)]
+        [Unicode(false)]
+        public string CliCidade { get; set; }
+        [Required]
+        [Column("cliBairro")]
+        [StringLength(100)]
+        [Unicode(false)]
+        public string CliBairro { get; set; }
+        [Required]
+        [Column("cliNuimero")]
         [StringLength(50)]
         [Unicode(false)]
-        public string Endereco { get; set; }
-        [Required]
-        [Column("cidade")]
-        [StringLength(50)]
+        public string CliNuimero { get; set; }
+        [Column("cliTelefoneCelular")]
+        [StringLength(14)]
         [Unicode(false)]
-        public string Cidade { get; set; }
-        [Required]
-        [Column("bairro")]
-        [StringLength(50)]
+        public string CliTelefoneCelular { get; set; }
+        [Column("cliTelefoneFixo")]
+        [StringLength(13)]
         [Unicode(false)]
-        public string Bairro { get; set; }
+        public string CliTelefoneFixo { get; set; }
 
-        [InverseProperty("IdClienteNavigation")]
+        [InverseProperty("LceIdClienteNavigation")]
         public virtual ICollection<LivroClienteEmprestimo> LivroClienteEmprestimo { get; set; }
     }
 }
