@@ -8,3 +8,6 @@ Projeto em **APS.NET Core** utilizando arquitetura **MVC**
 * entityframework core;
 * entityframework sql;
 * entityframework design.
+
+### Plugins
+* DataTables - [link](https://datatables.net/)
