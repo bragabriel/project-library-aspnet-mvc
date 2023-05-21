@@ -42,7 +42,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CliTelefoneFixo)
             </td>
-            <td class="row col-md">
+            <td class="col col-md-3">
                 <a asp-action="Edit" class="btn btn-success m-1" asp-route-id="@item.Id">Alterar</a>
                 <a asp-action="Details" class="btn btn-primary m-1" asp-route-id="@item.Id">Detalhes</a>
                 <a asp-action="Delete" class="btn btn-danger m-1" asp-route-id="@item.Id">Excluir</a>
@@ -55,7 +55,7 @@
 @section Scripts{
     <script>
         $(document).ready(function () {
-            $('#example').DataTable({
+            $('#myTable').DataTable({
                 language: {
                     url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/Portuguese-Brasil.json',
                 },

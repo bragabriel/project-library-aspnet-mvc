@@ -18,5 +18,23 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Create(Cliente model)
+        {
+            if(!ModelState.IsValid)
+                return View();
+
+            oClienteService.oRepositoryCliente.Incluir(model);
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Details(int id)
+        {
+            Cliente oCliente = oClienteService.oRepositoryCliente.SelecionarPk(id);
+
+            return View(oCliente);
+        }
     }
 }

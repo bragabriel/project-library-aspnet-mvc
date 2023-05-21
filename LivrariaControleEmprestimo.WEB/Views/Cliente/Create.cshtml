@@ -20,49 +20,41 @@
             <div class="card">
                 <div class="card-header">Informações Pessoais</div>
                 <div class="card-body">
-                    <div class="col-md">
-                        <div class="form-group">
-                            <label asp-for="CliCpf" class="control-label"></label>
-                            <input asp-for="CliCpf" class="form-control" />
-                            <span asp-validation-for="CliCpf" class="text-danger"></span>
-                        </div>
+                    <div class="form-group col-md">
+                        <label asp-for="CliCpf" class="control-label"></label>
+                        <input asp-for="CliCpf" class="form-control" />
+                        <span asp-validation-for="CliCpf" class="text-danger"></span>
                     </div>
-                    <div class="col-md">
-                        <div class="form-group">
-                            <label asp-for="CliNome" class="control-label"></label>
-                            <input asp-for="CliNome" class="form-control" />
-                            <span asp-validation-for="CliNome" class="text-danger"></span>
-                        </div>
-                   </div>
+                    <div class="form-group col-md">
+                        <label asp-for="CliNome" class="control-label"></label>
+                        <input asp-for="CliNome" class="form-control" />
+                        <span asp-validation-for="CliNome" class="text-danger"></span>
+                    </div>
                 </div>
             </div>
             <br />
             <div class="card">
                 <div class="card-header">Endereço</div>
                 <div class="card-body row">
-                    <div class="col-md">
-                        <div class="form-group">
-                            <label asp-for="CliEndereco" class="control-label"></label>
-                            <input asp-for="CliEndereco" class="form-control" />
-                            <span asp-validation-for="CliEndereco" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="CliCidade" class="control-label"></label>
-                            <input asp-for="CliCidade" class="form-control" />
-                            <span asp-validation-for="CliCidade" class="text-danger"></span>
-                        </div>
+                    <div class="form-group col-md">
+                        <label asp-for="CliEndereco" class="control-label"></label>
+                        <input asp-for="CliEndereco" class="form-control" />
+                        <span asp-validation-for="CliEndereco" class="text-danger"></span>
                     </div>
-                    <div class="col-md">
-                        <div class="form-group">
-                            <label asp-for="CliBairro" class="control-label"></label>
-                            <input asp-for="CliBairro" class="form-control" />
-                            <span asp-validation-for="CliBairro" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="CliNuimero" class="control-label"></label>
-                            <input asp-for="CliNuimero" class="form-control" />
-                            <span asp-validation-for="CliNuimero" class="text-danger"></span>
-                        </div>
+                    <div class="form-group">
+                        <label asp-for="CliCidade" class="control-label"></label>
+                        <input asp-for="CliCidade" class="form-control" />
+                        <span asp-validation-for="CliCidade" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md">
+                        <label asp-for="CliBairro" class="control-label"></label>
+                        <input asp-for="CliBairro" class="form-control" />
+                        <span asp-validation-for="CliBairro" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md">
+                        <label asp-for="CliNuimero" class="control-label"></label>
+                        <input asp-for="CliNuimero" class="form-control" />
+                        <span asp-validation-for="CliNuimero" class="text-danger"></span>
                     </div>
                 </div>
             </div>
@@ -83,7 +75,7 @@
                             <input asp-for="CliTelefoneFixo" class="form-control" />
                             <span asp-validation-for="CliTelefoneFixo" class="text-danger"></span>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -94,5 +86,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
