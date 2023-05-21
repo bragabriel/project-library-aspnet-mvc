@@ -52,5 +52,12 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
 
             return RedirectToAction("Details", new { id });
         }
+
+        public IActionResult Delete(int id)
+        {
+            oClienteService.oRepositoryCliente.Excluir(id); 
+            
+            return RedirectToAction("Index"); 
+        }
     }
 }
