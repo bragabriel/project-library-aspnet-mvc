@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -18,43 +19,59 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [Key]
         [Column("id")]
         public int Id { get; set; }
+
         [Required]
         [Column("cliCPF")]
         [StringLength(14)]
         [Unicode(false)]
+        [DisplayName("CPF")]
         public string CliCpf { get; set; }
+
         [Required]
         [Column("cliNome")]
         [StringLength(100)]
         [Unicode(false)]
+        [DisplayName("Nome")]
         public string CliNome { get; set; }
+
         [Required]
         [Column("cliEndereco")]
         [StringLength(200)]
         [Unicode(false)]
+        [DisplayName("Endereço")]
         public string CliEndereco { get; set; }
+
         [Required]
         [Column("cliCidade")]
         [StringLength(100)]
         [Unicode(false)]
+        [DisplayName("Cidade")]
         public string CliCidade { get; set; }
+
         [Required]
         [Column("cliBairro")]
         [StringLength(100)]
         [Unicode(false)]
+        [DisplayName("Bairro")]
         public string CliBairro { get; set; }
+
         [Required]
         [Column("cliNuimero")]
         [StringLength(50)]
         [Unicode(false)]
+        [DisplayName("Número")]
         public string CliNuimero { get; set; }
+
         [Column("cliTelefoneCelular")]
         [StringLength(14)]
         [Unicode(false)]
+        [DisplayName("Celular")]
         public string CliTelefoneCelular { get; set; }
+
         [Column("cliTelefoneFixo")]
         [StringLength(13)]
         [Unicode(false)]
+        [DisplayName("Telefone")]
         public string CliTelefoneFixo { get; set; }
 
         [InverseProperty("LceIdClienteNavigation")]
