@@ -21,13 +21,14 @@ namespace LivrariaControleEmprestimo.DATA.Models
         public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Livro> Livro { get; set; }
         public virtual DbSet<LivroClienteEmprestimo> LivroClienteEmprestimo { get; set; }
+        public virtual DbSet<VwLivroClienteEmprestimo> VwLivroClienteEmprestimo { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=ControleEmprestimoLivro;User ID=sa;Password=Database123; Trusted_Connection=True; TrustServerCertificate=True;");
+                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=ControleEmprestimoLivro;User ID=sa;Password=Database123");
             }
         }
 
@@ -46,6 +47,11 @@ namespace LivrariaControleEmprestimo.DATA.Models
                     .HasForeignKey(d => d.LceIdLivro)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Livro_Cliente_Emprestimo_Livro");
+            });
+
+            modelBuilder.Entity<VwLivroClienteEmprestimo>(entity =>
+            {
+                entity.ToView("VW_Livro_Cliente_Emprestimo");
             });
 
             OnModelCreatingPartial(modelBuilder);

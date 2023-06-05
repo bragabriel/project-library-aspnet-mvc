@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
@@ -19,32 +18,23 @@ namespace LivrariaControleEmprestimo.DATA.Models
         [Key]
         [Column("id")]
         public int Id { get; set; }
-
         [Required]
         [Column("livroNome")]
-        [DisplayName("Nome do Livro")]
         [StringLength(50)]
         [Unicode(false)]
         public string LivroNome { get; set; }
-
         [Required]
         [Column("livroAutor")]
         [StringLength(100)]
         [Unicode(false)]
-        [DisplayName("Autor")]
         public string LivroAutor { get; set; }
-
         [Required]
         [Column("livroEditora")]
         [StringLength(50)]
         [Unicode(false)]
-        [DisplayName("Editora")]
         public string LivroEditora { get; set; }
-
         [Column("livroAnoPublicacao", TypeName = "datetime")]
-        [DisplayName("Ano de Publicação")]
         public DateTime LivroAnoPublicacao { get; set; }
-
         [Column("livroEdicao")]
         [StringLength(50)]
         [Unicode(false)]
