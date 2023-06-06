@@ -17,13 +17,14 @@ namespace LivrariaControleEmprestimo.WEB.Controllers
         public IActionResult Create()
         {
             EmprestimoViewModel oEmprestimoViewModel = new EmprestimoViewModel();
+          
             List<Livro> oListLivro = _service.oRepositoryLivro.SelecionarTodos();   
             List<Cliente> oListCliente = _service.oRepositoryCliente.SelecionarTodos();
 
             oEmprestimoViewModel.oListCliente = oListCliente;
             oEmprestimoViewModel.oListLivro = oListLivro;
             
-            return View();
+            return View(oEmprestimoViewModel);
         }
     }
 }
